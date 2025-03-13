@@ -1,7 +1,8 @@
 import os
 from shutil import copyfile
 
-dataset_folder = os.path.join('dataset','train')
+dataset_folder = 'train'  # Update this to match the actual directory structure
+# dataset_folder = os.path.join('dataset','train') # Does not work with my project structure
 
 destination_folder = os.path.join('dataset_reduced')
 if not os.path.exists(destination_folder):

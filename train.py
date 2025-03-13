@@ -9,16 +9,16 @@
 ############################################
 import os
 import time
-import numpy as np
+import numpy as np # type: ignore
 
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import torchvision
-import torchvision.models as models
-from torch.utils.data import SubsetRandomSampler
+import torch # type: ignore
+import torch.nn as nn # type: ignore
+import torch.optim as optim # type: ignore
+import torchvision # type: ignore
+import torchvision.models as models # type: ignore
+from torch.utils.data import SubsetRandomSampler # type: ignore
 
-from PIL import Image, ImageFile
+from PIL import Image, ImageFile # type: ignore
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 from net import Net, NetExample
@@ -52,7 +52,8 @@ train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_s
 
 #%% Iterable on dataloader
 dataiter = iter(train_dataloader)
-images, labels = dataiter.next()
+images, labels = next(dataiter)  # Use the next function to get the next batch
+# images, labels = dataiter.next() # not working
 
 # Show the batch of input images as grid
 imshow(torchvision.utils.make_grid(images), mean=mean_norm, std=std_norm)

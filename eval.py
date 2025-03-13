@@ -5,11 +5,11 @@
 # You have to train your CNN before. See train.py
 ############################################
 
-import torch
-import torchvision
+import torch # type: ignore
+import torchvision # type: ignore
 
-from sklearn.metrics import confusion_matrix, classification_report
-from PIL import ImageFile
+from sklearn.metrics import confusion_matrix, classification_report # type: ignore
+from PIL import ImageFile # type: ignore
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 from config import *

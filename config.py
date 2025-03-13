@@ -5,12 +5,13 @@
 # for this example.
 ############################################
 
-import torchvision.transforms as transforms
+import torchvision.transforms as transforms # type: ignore
 import os
 
 # Root dataset folder
 dataset_folder = 'dataset_reduced'
-train_folder = os.path.join(dataset_folder, "train")
+train_folder = 'train'
+# train_folder = os.path.join(dataset_folder, "train") # Does not work with my project structure
 val_folder = os.path.join(dataset_folder, "val")
 
 # Set to 0 on Windows
